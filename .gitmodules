@@ -1,0 +1,3 @@
+[submodule "ONNXruntime-VSTplugin-template"]
+	path = ONNXruntime-VSTplugin-template
+	url = https://github.com/domenicostefani/ONNXruntime-VSTplugin-template
