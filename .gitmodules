@@ -1,3 +1,6 @@
 [submodule "ONNXruntime-VSTplugin-template"]
 	path = ONNXruntime-VSTplugin-template
 	url = https://github.com/domenicostefani/ONNXruntime-VSTplugin-template
+[submodule "TFlite-VSTplugin-template"]
+	path = TFlite-VSTplugin-template
+	url = https://github.com/domenicostefani/TFlite-VSTplugin-template
