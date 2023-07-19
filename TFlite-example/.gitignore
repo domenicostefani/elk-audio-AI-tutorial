@@ -1,0 +1,8 @@
+Builds
+JuceLibraryCode
+.vscode
+
+# ignore all build folders
+*build*/
+
+libs/tensorflow
