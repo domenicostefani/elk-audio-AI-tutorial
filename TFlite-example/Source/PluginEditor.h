@@ -1,23 +1,22 @@
 /*
  * This file contains the basic framework code for a JUCE plugin that uses the TensorFlow Lite library for deep inference.
-*/
+ */
 
 #pragma once
 
 #include <JuceHeader.h>
+
 #include "PluginProcessor.h"
 
-//==============================================================================
-/**
-*/
-class TFliteTemplatePluginAudioProcessorEditor  : public juce::AudioProcessorEditor
-{
+typedef juce::AudioProcessorValueTreeState::SliderAttachment SliderAttachment;
+
+class TFliteTemplatePluginAudioProcessorEditor : public juce::AudioProcessorEditor {
 public:
-    TFliteTemplatePluginAudioProcessorEditor (TFliteTemplatePluginAudioProcessor&);
+    TFliteTemplatePluginAudioProcessorEditor(TFliteTemplatePluginAudioProcessor&);
     ~TFliteTemplatePluginAudioProcessorEditor() override;
 
     //==============================================================================
-    void paint (juce::Graphics&) override;
+    void paint(juce::Graphics&) override;
     void resized() override;
 
 private:
@@ -25,5 +24,9 @@ private:
     // access the processor object that created it.
     TFliteTemplatePluginAudioProcessor& audioProcessor;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TFliteTemplatePluginAudioProcessorEditor)
+    // Gain Slider
+    Slider gainSlider;
+    std::unique_ptr<SliderAttachment> gainSliderAttachment;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TFliteTemplatePluginAudioProcessorEditor)
 };
