@@ -1,0 +1,12 @@
+# The first uncommented line will be the version of elk-pi to use for compilation.
+#
+# You should still manually download the elk-pi sdk and place in in the default 
+# location (e.g. /opt/elk/...)
+#
+# For changes to take effect, you must open TFliteTemplatePlugin.jucer with the 
+# Projucer and save the project (Or run "$bash create_compile_scripts.sh ." 
+# from this directory)
+
+# 0.9.0
+0.11.0 # Version used for the tutorial paper
+# 1.0.0
