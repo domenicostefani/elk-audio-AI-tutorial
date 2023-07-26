@@ -6,3 +6,7 @@ JuceLibraryCode
 *build*/
 
 sample_data/env/
+
+libs/onnxruntime
+libs/onnxruntime-linux-x64-1.7.0.tgz
+onnxruntime1.7.0-build-linux_aarch64
