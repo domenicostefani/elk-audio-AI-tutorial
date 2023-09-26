@@ -1,3 +1,13 @@
+# Real-Time Embedded Deep Learning Deployment for Elk Audio OS
+
+This guide contains a more detailed and up to date version of the instructions provided in the paper:  
+  
+*Domenico Stefani, Luca Turchet **"A Guide to Real-Time Embedded Deep Learning Deployment for Elk Audio OS"** in International Symposium on the Internet of Sounds (IS<sup>2</sup>), Pisa, Italy Oct 2023 (Accepted)*
+
+The paper will soon be available [here](https://domenicostefani.com/phd_research.html#2023IS2-Guide)
+
+## Contents
+
 1. [Tools](#tools)  
     1.1. [JUCE and VST](#juce-and-vst))  
     1.2. [Elk Audio OS](#elk-audio-os)  
@@ -19,7 +29,7 @@
 
 ### JUCE and VST
 
-JUCE is a cross-platform framework for audio plugins and applications.
+[JUCE](https://github.com/juce-framework/JUCE) is a cross-platform framework for audio plugins and applications.
 It is a C++ framework with a dual license (i.e., GPLv3 open-source and
 commercial). JUCE embeds the VST3 SDK and Elk Audio provides support and
 instructions on how to build a JUCE plugin for their OS. The procedure
@@ -28,12 +38,12 @@ reported in this guide was tested with JUCE 6 (version 6.0.7).
 ### Elk Audio OS
 
 [Elk Audio OS](https://elk-audio.github.io/elk-docs/html/index.html) is an embedded operating 
-system optimized for low-latency audio processing on embedded hardware.
+system optimized for low-latency audio processing on embedded hardware.  
 Currently, Elk offers a disk image and a cross-compilation SDK for the 
 Raspberry Pi 4 single-board computer, and
 more hardware platforms (see the [docs](https://elk-audio.github.io/elk-docs/html/intro/supported_hw.html)) under a commercial license. Moreover, up
-to Elk Audio OS version 0.7.2 Raspberry Pi 3 was supported. The
-instructions in [the paper connected to this guide](https://domenicostefani.com/phd_research.html#2023IS2-Guide) refer to version 0.11.0. Nevertheless, we will try to keep the
+to Elk Audio OS version `0.7.2` Raspberry Pi 3 was supported. The
+instructions in [the paper connected to this guide](https://domenicostefani.com/phd_research.html#2023IS2-Guide) refer to version `0.11.0`. Nevertheless, we will try to keep the
 online repository and this guide updated with the latest version of the OS. 
 
 ### Choice of Inference Engine
@@ -200,43 +210,34 @@ compatible with Elk Audio OS are the following:
 
 2. Edit settings (View \> Show Project Settings):
     ![juce settings](img/juce-settings.png)
-
     1. Set VST3 or VST legacy as Plugin Formats (Specify VST legacy
         only if in possession of the now discontinued VST2 SDK, which
         should eventually be linked in File \> Global Paths);
     ![juce formats](img/juce-formats.png)
     ![juce paths](img/juce-paths.png)
-
     2. Add header folder paths for the inference engine and other
         dependencies in the *Header Search Paths* field. Paths are
         relative to the `Builds/<exporter-name>/` folder;
     ![juce-headersearchpaths](img/juce-headersearchpaths.png)
-
 3. Disable `JUCE_WEB_BROWSER` in the *juce_gui_extra module* (in the Modules panel, on the
     left of the Projucer window);
     ![juce-browserdisable](img/juce-browserdisable.png)
-
 4. Create a Linux Makefile exporter (Exporters panel):
-
     1. Click the plus icon to create the exporter and specify Linux
         Makefile;
         ![juce-exporter](img/juce-createexporter.png)
-
     2. On the main Linux Makefile exporter panel (click on the
         explorer) add the name of the libraries to include in the
         *External Libraries to Link* (e.g., `onnxruntime` , to include the binary `libonnxruntime.so`);
         ![juce-addlib](img/juce-addlib.png)
-
     3. On all the configuration panels (e.g., Debug and Release) add
         the paths to the included libraries. Paths are relative to the `Builds/<exporter-name>/`
         folder. Make sure that the path leads to a version of the
         library binary compiled for the target architecture
         Linux-aarch64. Refer to the section on [dependencies compilation](#dependencies-compilation)};
         ![juce-libpaths](img/juce-libpaths.png)
-
 5. Save the project to create the build directory structure and
     Makefiles.
-
 6. Manually add a cross-compile script to the `Build/<exporter_name>` folder. See
     the section on TODO for a
     description of what the script should include, or copy the `compileForElk.sh` script
@@ -288,15 +289,10 @@ can be integrated reasonably well with Elk's toolchain. The main steps
 for cross-compilation of these libraries are the following:
 
 1. Downloading and installing the Elk-PI SDK;
-
 2. Downloading the library source code for the desired version;
-
 3. Creating a `build` folder;
-
 4. Resetting `LD_LIBRARY_PATH` and sourcing the Elk-PI SDK;
-
 5. Executing CMake from the build directory: `cmake path/to/CMakeLists/dir/`;
-
 6. Compiling with `make`
 
 A working example can be found in the repository for this project for the TensorFlow Lite template.
@@ -378,15 +374,10 @@ the following:
 
 1. Saving the project from the Projucer app, to create the build
     structure;
-
 2. Opening the terminal in the `/build/linux-aarch64` folder;
-
 3. Resetting `LD_LIBRARY_PATH`;
-
 4. Sourcing the Elk-PI SDK;
-
 5. Compiling with `make`, specifying `JUCE_HEADLESS_PLUGIN_CLIENT=1`;
-
 6. For VST3 plugins, renaming the `PluginName.vst3/Contents/arm64-linux`
     folder to `aarch64-linux`.
 
@@ -617,25 +608,30 @@ follow:
 
 1. Running the GNU Debugger `gdb` on the sushi executable for the current
     block size (default 64):
-
     ```
     gdb sushi_b64
     ```
-
 2. Setting `gdb` to stop whenever the `SIGXCPU` signal is sent by the program:
-
     ```
     catch signal SIGXCPU
     ```
-
 3. Running Sushi with the debug-mode-sw flag:
-
     ```
     r -r --debug-mode-sw -c config.json
     ```
 
 Finally, the [Elk Audio forum](https://forum.elk.audio/) can be a useful source to find support and solve similar problems.
 
+## Bibliography
+
+[[Stefani, 2022a]](https://domenicostefani.com/publications/2022DAFX_2_Challenges.pdf) D. Stefani and L. Turchet, “On the Challenges of Embedded Real-Time
+Music Information Retrieval,” in Proceedings of the 25-th Int. Conf. on
+Digital Audio Effects (DAFx20in22), vol. 3, Sept. 2022, pp. 177–184.  
+[BibTeX](data/challenges.bib)
+
+[[Stefani, 2022b]](https://domenicostefani.com/publications/2022DAFX_1_Comparison.pdf) D. Stefani, S. Peroni, and L. Turchet, “A comparison of deep learning inference engines for embedded real-time audio classification,” in
+Proceedings of the Digital Audio Effects Conference, 2022.
+[BibTeX](data/comparison.bib)
 
 *26th of September 2023*  
 *Domenico Stefani*
