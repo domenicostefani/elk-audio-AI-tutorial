@@ -611,6 +611,9 @@ update its output every three seconds:
 watch -n 3 cat /proc/xenomai/sched/stat
 ```
 
+![elk-msw](img/elk-msw.png)
+*Example of a malfunctioning plugin, with multiple mode switches on different sushi threads*
+
 Version 1.0.0, which was released while this guide was being finalized,
 requires using the `evl ps -s` command instead and looking at the `ISW` counter.
 
