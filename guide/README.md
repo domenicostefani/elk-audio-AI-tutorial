@@ -15,15 +15,15 @@ The paper will soon be available [here](https://domenicostefani.com/phd_research
     1.4. [Project's Repository](#project's-repository)  
 2. [Stepwise deployment procedure](#stepwise-deployment-procedure)  
     2.1. [JUCE VST plugin creation](#juce-vst-plugin-creation)  
-        2.1.1. [Templates](#templates)  
-        2.1.2. [Manual Creation](#manual-creation)  
+    `····` 2.1.1. [Templates](#templates)  
+    `····` 2.1.2. [Manual Creation](#manual-creation)  
     2.2. [Cross-compilation for Elk Audio OS](#cross-compilation-for-elk-audio-os)  
-        2.2.1. [Dependencies Compilation](#dependencies-compilation)  
-        2.2.2. [Plugins Compilation](#plugins-compilation)  
+    `····` 2.2.1. [Dependencies Compilation](#dependencies-compilation)  
+    `····` 2.2.2. [Plugins Compilation](#plugins-compilation)  
     2.3. [Elk Audio OS on the Raspberry](#elk-audio-os-on-the-raspberry)  
     2.4. [DAW configuration: Sushi](#daw-configuration-sushi)  
     2.5. [Diagnostic tools](#diagnostic-tools)  
-
+    
 
 ## Tools
 
