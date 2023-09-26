@@ -23,11 +23,12 @@ The paper will soon be available [here](https://domenicostefani.com/phd_research
     2.3. [Elk Audio OS on the Raspberry](#elk-audio-os-on-the-raspberry)  
     2.4. [DAW configuration: Sushi](#daw-configuration-sushi)  
     2.5. [Diagnostic tools](#diagnostic-tools)  
-    
+
 
 ## Tools
 
 ### JUCE and VST
+[> Back to top < ](#contents) 
 
 [JUCE](https://github.com/juce-framework/JUCE) is a cross-platform framework for audio plugins and applications.
 It is a C++ framework with a dual license (i.e., GPLv3 open-source and
@@ -36,6 +37,7 @@ instructions on how to build a JUCE plugin for their OS. The procedure
 reported in this guide was tested with JUCE 6 (version 6.0.7).
 
 ### Elk Audio OS
+[> Back to top < ](#contents) 
 
 [Elk Audio OS](https://elk-audio.github.io/elk-docs/html/index.html) is an embedded operating 
 system optimized for low-latency audio processing on embedded hardware.  
@@ -47,6 +49,7 @@ instructions in [the paper connected to this guide](https://domenicostefani.com/
 online repository and this guide updated with the latest version of the OS. 
 
 ### Choice of Inference Engine
+[> Back to top < ](#contents) 
 
 Inference of deep learning
 models is the process of running an input through the network and
@@ -98,6 +101,7 @@ template code, while PyTorch and other developers should convert their
 models to ONNX and use ONNX Runtime.
 
 ### Project's Repository
+[> Back to top < ](#contents) 
 
 This guide is intended help to successfully deploy
 deep learning models to
@@ -113,6 +117,7 @@ will serve as an up-to-date version of the guide, addressing potential
 changes in the new version of Elk Audio OS or inference engines.
 
 ## Stepwise deployment procedure
+[> Back to top < ](#contents) 
 
 This section presents the stepwise procedure to deploy a
 deep learning model to a
@@ -156,6 +161,7 @@ The next sections will describe the following steps:
 5. [Troubleshooting](#diagnostic-tools).
 
 ### JUCE VST plugin creation
+[> Back to top < ](#contents) 
 
 JUCE plugins can be created using the Projucer app, which is provided
 with any JUCE distribution. The Projucer handles the configuration of
@@ -175,6 +181,7 @@ Audio OS:
 -   Manual project creation.
 
 #### Templates
+[> Back to top < ](#contents) 
 
 The project repository contains template projects for ONNX
 runtime and TensorFlow Lite. These include the precompiled dependencies
@@ -201,6 +208,7 @@ plugin editor, as the graphic routines will simply not be called by the
 Sushi DAW.
 
 #### Manual Creation
+[> Back to top < ](#contents) 
 
 The steps needed for manually creating a JUCE project for a
 VST plugin that is
@@ -249,6 +257,7 @@ GUI code from the
 project.
 
 ### Cross-compilation for Elk Audio OS
+[> Back to top < ](#contents) 
 
 Deploying any plugin to Elk Audio OS (especially for Raspberry Pi and
 resource-constrained devices) will generally involve cross-compilation.
@@ -273,6 +282,7 @@ library of choice, as the pre-compiled binaries are included in the
 project repository.
 
 #### Dependencies Compilation
+[> Back to top < ](#contents) 
 
 To cross-compile a plugin, any eternal dependency needs to be compiled.
 In the case of a simple plugin that integrates deep-learning inference, the sole direct dependency
@@ -363,6 +373,7 @@ On the contrary, static libraries (i.e., `*.a` files) are automatically
 included in the plugin binary and do not need to be copied to the board.
 
 #### Plugins Compilation
+[> Back to top < ](#contents) 
 
 Once the inference engine and other libraries required are compiled and
 properly added to the compilation exporter (see Projucer configuration
@@ -404,6 +415,7 @@ TARGET_ARCH="-mcpu=cortex-a72 -mtune=cortex-a72"
 ```
 
 ### Elk Audio OS on the Raspberry
+[> Back to top < ](#contents) 
 
 Elk Audio OS v0.11.0 is available as open source for the Raspberry Pi 4
 board (see the [repository](https://github.com/elk-audio/elk-pi/releases)), while older versions support also the Raspberry Pi 3. More
@@ -455,6 +467,7 @@ scp libonnxruntime.so mind@elk-pi.local:~/
 ```
 
 ### DAW configuration: Sushi
+[> Back to top < ](#contents) 
 
 Once a VST plugin is
 copied to the board, it can be hosted via Elk Audio OS's
@@ -557,6 +570,7 @@ configuration or plugin can be identified in the log file `/tmp/sushi.log`. The 
 section will provide a brief overview of diagnostic tools.
 
 ### Diagnostic tools
+[> Back to top < ](#contents) 
 
 By default, Sushi logs events and errors at run-time to the file `/tmp/sushi.log`. The
 logging level can be changed using thee `-l` flag. The log can show errors
@@ -631,7 +645,10 @@ Digital Audio Effects (DAFx20in22), vol. 3, Sept. 2022, pp. 177–184.
 
 [[Stefani, 2022b]](https://domenicostefani.com/publications/2022DAFX_1_Comparison.pdf) D. Stefani, S. Peroni, and L. Turchet, “A comparison of deep learning inference engines for embedded real-time audio classification,” in
 Proceedings of the Digital Audio Effects Conference, 2022.
-[BibTeX](data/comparison.bib)
+[BibTeX](data/comparison.bib)  
+
+[> Back to top < ](#contents) 
+
 
 *26th of September 2023*  
 *Domenico Stefani*
