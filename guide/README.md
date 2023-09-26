@@ -9,7 +9,7 @@ The paper will soon be available [here](https://domenicostefani.com/phd_research
 ## Contents
 
 1. [Tools](#tools)  
-    1.1. [JUCE and VST](#juce-and-vst))  
+    1.1. [JUCE and VST](#juce-and-vst)  
     1.2. [Elk Audio OS](#elk-audio-os)  
     1.3. [Choice of Inference Engine](#choice-of-inference-engine)  
     1.4. [Project's Repository](#project's-repository)  
@@ -21,7 +21,7 @@ The paper will soon be available [here](https://domenicostefani.com/phd_research
         2.2.1. [Dependencies Compilation](#dependencies-compilation)  
         2.2.2. [Plugins Compilation](#plugins-compilation)  
     2.3. [Elk Audio OS on the Raspberry](#elk-audio-os-on-the-raspberry)  
-    2.4. [DAW configuration: Sushi](#daw-configuration:-sushi)  
+    2.4. [DAW configuration: Sushi](#daw-configuration-sushi)  
     2.5. [Diagnostic tools](#diagnostic-tools)  
 
 
@@ -153,7 +153,7 @@ The next sections will describe the following steps:
 2. [Cross-compilation of a plugin and its dependencies](#cross-compilation-for-elk-audio-os);
 3. [Installation and communication with Elk Audio](#elk-audio-os-on-the-raspberry);
 4. [Configuration of Elk's DAW](#daw-configuration-sushi) ;
-5. [Troubleshooting](#diagnostic-tools);
+5. [Troubleshooting](#diagnostic-tools).
 
 ### JUCE VST plugin creation
 
