@@ -2,7 +2,7 @@
 
 This guide contains a more detailed and up to date version of the instructions provided in the paper:  
   
-*Domenico Stefani, Luca Turchet **"A Guide to Real-Time Embedded Deep Learning Deployment for Elk Audio OS"** in International Symposium on the Internet of Sounds (IS<sup>2</sup>), Pisa, Italy Oct 2023 (Accepted)*
+*Domenico Stefani, Luca Turchet **"Real-Time Embedded Deep Learning on Elk Audio OS"** in International Symposium on the Internet of Sounds (IS<sup>2</sup>), Pisa, Italy Oct 2023 (Accepted)*
 
 The paper will soon be available [here](https://domenicostefani.com/phd_research.html#2023IS2-Guide)
 
