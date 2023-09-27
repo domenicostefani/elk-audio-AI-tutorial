@@ -12,7 +12,7 @@ The paper will soon be available [here](https://domenicostefani.com/phd_research
     1.1. [JUCE and VST](#juce-and-vst)  
     1.2. [Elk Audio OS](#elk-audio-os)  
     1.3. [Choice of Inference Engine](#choice-of-inference-engine)  
-    1.4. [Project's Repository](#project's-repository)  
+    1.4. [Project Repository](#project-repository)  
 2. [Stepwise deployment procedure](#stepwise-deployment-procedure)  
     2.1. [JUCE VST plugin creation](#juce-vst-plugin-creation)  
     `····` 2.1.1. [Templates](#templates)  
@@ -100,7 +100,7 @@ For TensorFlow developers, we suggest choosing the TensorFlow Lite
 template code, while PyTorch and other developers should convert their
 models to ONNX and use ONNX Runtime.
 
-### Project's Repository
+### Project Repository
 [> Back to top < ](#contents) 
 
 This guide is intended help to successfully deploy
