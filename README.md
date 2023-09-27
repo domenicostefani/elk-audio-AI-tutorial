@@ -10,7 +10,7 @@ The repository is meant to accompany the following scientific paper:
 The paper will soon be available [here](https://domenicostefani.com/phd_research.html#2023IS2-Guide)
 
 ## Guide
-You can find the guide in the [guide/README.md](guide/README.md) file.
+You can find the guide in the [Wiki](https://github.com/CIMIL/elk-audio-AI-tutorial/wiki) (Or the [guide/README.md](guide/README.md) file).
 
 ## Repository Description <a name = "about"></a>
 
